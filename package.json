@@ -1,0 +1,33 @@
+{
+  "name": "@pipemind/rsjf-primereact",
+  "version": "0.0.1",
+  "main": "dist/es/index.js",
+  "module": "dist/es/index.js",
+  "description": "Primereact theme, fields and widgets for react-jsonschema-form",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "build": "cross-env NODE_ENV=production BABEL_ENV=es babel --extensions \".js,.jsx,.ts,.tsx\" ./src --out-dir ./dist/es"
+  },
+  "peerDependencies": {
+    "react": ">=17",
+    "primeicons": ">=4",
+    "primereact": ">=6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.0.0",
+    "cross-env": "^2.0.1"
+  },
+  "dependencies": {
+    "@rjsf/core": "^2.5.1",
+    "styled-components": "^5.2.1",
+    "react-transition-group": "^4.4.1"
+  }
+}
