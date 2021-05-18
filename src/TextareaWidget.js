@@ -1,6 +1,12 @@
 import React from "react"
+import styled from 'styled-components'
 import { InputTextarea } from 'primereact/inputtextarea'
+
 import { FloatWrapper } from './util'
+
+const StyledTextarea = styled(InputTextarea)`
+  width: 100%;
+`
 
 function TextareaWidget({
   id,
@@ -26,7 +32,7 @@ function TextareaWidget({
   const _onBlur = () => onBlur && onBlur(id, value)
   const _onFocus = () => onFocus && onFocus(id, value)
   const inputType = schema.type === 'string' ?  'text' : `${schema.type}`
-  
+
   return (
     <FloatWrapper 
       key={id}
@@ -34,16 +40,18 @@ function TextareaWidget({
       id={id} 
       label={label}
     >
-      <InputTextarea
+      <StyledTextarea
         id={id}
         placeholder={placeholder}
         type={inputType}
         label={schema.title || label}
         required={required}
         autoFocus={autofocus}
-        disabled={disabled || readonly}
+        disabled={disabled}
+        readOnly={readonly}
         name={name}
         value={value || value === 0 ? value : ""}
+        rows={options.rows || 5}
         onChange={_onChange}
         onBlur={_onBlur}
         onFocus={_onFocus}

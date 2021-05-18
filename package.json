@@ -16,7 +16,8 @@
   "peerDependencies": {
     "react": ">=17",
     "primeicons": ">=4",
-    "primereact": ">=6"
+    "primereact": ">=6",
+    "primeflex": ">=2"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.14",
