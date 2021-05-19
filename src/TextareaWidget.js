@@ -25,6 +25,7 @@ function TextareaWidget({
   options,
   formContext,
 }) {
+  console.log('options', options)
   // eslint-disable-next-line no-shadow
   const _onChange = ({ target: { value } }) => {
     return onChange(value === "" ? options.emptyValue : value)

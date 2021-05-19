@@ -1,6 +1,12 @@
 import React from "react"
+import styled from 'styled-components'
 import { InputText } from 'primereact/inputtext'
+
 import { FloatWrapper } from './util'
+
+const StyledText = styled(InputText)`
+  width: 100%;
+`
 
 function TextWidget({
   id,
@@ -34,7 +40,7 @@ function TextWidget({
       id={id} 
       label={label}
     >
-      <InputText
+      <StyledText
         id={id}
         placeholder={placeholder}
         type={inputType}
