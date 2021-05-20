@@ -5,11 +5,6 @@ import DescriptionField from "./DescriptionField"
 // import HelpField from "../HelpField";
 // import RawErrors from "../RawErrors";
 
-
-const FormGroup = styled.div`
-  margin: 20px 0;
-`
-
 function FieldTemplate({
   id,
   children,
@@ -23,7 +18,7 @@ function FieldTemplate({
   ...props
 }) {
   return (
-    <FormGroup>
+    <>
       {children}
       {displayLabel && rawDescription && rawDescription && (
         <div>
@@ -32,7 +27,7 @@ function FieldTemplate({
       )}
       {/* <HelpField helpText={rawHelp} id={id} /> */}
       {/* <RawErrors errors={rawErrors} options={errorOptions} /> */}
-    </FormGroup>
+    </>
   );
 }
 

@@ -51,7 +51,8 @@ const Theme = {
     }
   },
   FieldTemplate,
-  ObjectFieldTemplate
+  ObjectFieldTemplate,
+  ArrayFieldTemplate
 }
 
 export default Theme

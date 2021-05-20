@@ -5,7 +5,7 @@ import { FloatWrapper } from './util'
 
 const DropdownLabel = styled.label`
   display: block;
-  padding-bottom: 5px;
+  padding: 6px 0;
 `
 
 function SelectWidget(props) {

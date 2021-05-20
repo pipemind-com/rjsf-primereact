@@ -5,14 +5,16 @@ const Wrapper = styled.div`
 `
 
 export function FloatWrapper ({ required, label, id, children }) {
+  if (!label) {
+    return children
+  }
+
   return (
     <Wrapper className="p-float-label">
       {children}
-      {!!label && (
-        <label htmlFor={id}>
-          {label} {required ? <span title="Required">*</span> : undefined}
-        </label>
-      )}
+      <label htmlFor={id}>
+        {label} {required ? <span title="Required">*</span> : undefined}
+      </label>
     </Wrapper>
   )
 }
