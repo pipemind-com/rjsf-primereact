@@ -2,11 +2,10 @@ import React from "react"
 import { FileUpload } from 'primereact/fileupload'
 
 export default function FileTemplate (props) {
-  console.log({ props })
   const { id, label } = props
   
   function myUploader (event) {
-    console.log({ event })
+    // console.log({ event })
   }
 
   return (

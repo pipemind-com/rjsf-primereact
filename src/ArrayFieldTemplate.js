@@ -17,9 +17,13 @@ const MaybeWrap = styled.div`
 `
 
 const RowActions = styled.div`
-  width: ${props => (props.children?.length || 0) * 40};
+  background-color: #e9ecef;
+
 `
 
+const Row = styled.div`
+  margin-top: 10px;
+`
 
 const ArrayFieldTitle = ({ TitleField, idSchema, uiSchema, title }) => {
   if (!title) {
@@ -49,52 +53,35 @@ function isInitialArrayItem(props) {
 // Used in the two templates
 function DefaultArrayItem(props) {
   return (
-    <div className="p-grid" key={props.key}>
+    <Row className="p-grid p-shadow-2" key={props.key}>
       <div className="p-col">
         {props.children}
       </div>
       {props.hasToolbar && (props.hasMoveUp || props.hasMoveDown || props.hasRemove) && (
-        <RowActions className="p-col-fixed p-buttonset p-justify-end  ">
-            {(props.hasMoveUp || props.hasMoveDown) && (
-              <Button
-                icon="pi pi-angle-up"
-                tabIndex="-1"
-                disabled={
-                  props.disabled || props.readOnly || !props.hasMoveUp
-                }
-                onClick={props.onReorderClick(
-                  props.index,
-                  props.index - 1
-                )}
-              />
-            )}
+        <RowActions className="p-col-fixed p-d-flex p-flex-column-reverse p-jc-between">
+          {props.hasRemove && (
+            <Button
+              icon="pi pi-trash"
+              className="p-button-danger"
+              tabIndex="-1"
+              disabled={props.disabled || props.readOnly}
+              onClick={props.onDropIndexClick(props.index)}
+            />
+          )}
 
-            {(props.hasMoveUp || props.hasMoveDown) && (
-              <Button
-                icon="pi pi-angle-down"
-                tabIndex="-1"
-                disabled={
-                  props.disabled || props.readOnly || !props.hasMoveDown
-                }
-                onClick={props.onReorderClick(
-                  props.index,
-                  props.index + 1
-                )}
-              />
-            )}
-
-            {props.hasRemove && (
-              <Button
-                icon="pi pi-trash"
-                className="p-button-danger"
-                tabIndex="-1"
-                disabled={props.disabled || props.readOnly}
-                onClick={props.onDropIndexClick(props.index)}
-              />
-            )}
+          {(props.hasMoveUp || props.hasMoveDown) && (
+            <Button
+              icon="pi pi-bars"
+              tabIndex="-1"
+              onClick={props.onReorderClick(
+                props.index,
+                props.index - 1
+              )}
+            />
+          )}
         </RowActions>
       )}
-    </div>
+    </Row>
   );
 }
 

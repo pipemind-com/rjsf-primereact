@@ -5,6 +5,10 @@ import DescriptionField from "./DescriptionField"
 // import HelpField from "../HelpField";
 // import RawErrors from "../RawErrors";
 
+const Wrapper = styled.div`
+  margin-bottom: 10px;
+`
+
 function FieldTemplate({
   id,
   children,
@@ -18,7 +22,7 @@ function FieldTemplate({
   ...props
 }) {
   return (
-    <>
+    <Wrapper>
       {children}
       {displayLabel && rawDescription && rawDescription && (
         <div>
@@ -27,7 +31,7 @@ function FieldTemplate({
       )}
       {/* <HelpField helpText={rawHelp} id={id} /> */}
       {/* <RawErrors errors={rawErrors} options={errorOptions} /> */}
-    </>
+    </Wrapper>
   );
 }
 

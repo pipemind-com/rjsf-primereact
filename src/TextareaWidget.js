@@ -6,6 +6,7 @@ import { FloatWrapper } from './util'
 
 const StyledTextarea = styled(InputTextarea)`
   width: 100%;
+  background-color: ${props => props.readOnly ? '#e2e2e2' : 'initial'}
 `
 
 function TextareaWidget({
@@ -24,8 +25,8 @@ function TextareaWidget({
   autofocus,
   options,
   formContext,
+  uiSchema
 }) {
-  console.log('options', options)
   // eslint-disable-next-line no-shadow
   const _onChange = ({ target: { value } }) => {
     return onChange(value === "" ? options.emptyValue : value)
@@ -34,8 +35,11 @@ function TextareaWidget({
   const _onFocus = () => onFocus && onFocus(id, value)
   const inputType = schema.type === 'string' ?  'text' : `${schema.type}`
 
+  console.log('uiSchema["ui:textProcessing"]', uiSchema["ui:textProcessing"])
+
   return (
     <FloatWrapper 
+      float={!!options.float}
       key={id}
       required={required} 
       id={id} 

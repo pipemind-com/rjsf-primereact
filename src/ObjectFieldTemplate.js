@@ -51,9 +51,6 @@ function ObjectFieldTemplate(props) {
       </>
     )
   }
-console.log('properties', properties, fieldLayout)
-
-  
 
   return (
     <>

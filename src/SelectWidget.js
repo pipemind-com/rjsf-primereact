@@ -8,6 +8,10 @@ const DropdownLabel = styled.label`
   padding: 6px 0;
 `
 
+const DropdownInput = styled(Dropdown)`
+  width: 100%;
+`
+
 function SelectWidget(props) {
   const {
     id,
@@ -19,17 +23,10 @@ function SelectWidget(props) {
     onChange
   } = props
 
-  console.log('dropdown props', props)
-
-  function processValue (event) {
-
-    console.log(event)
-  }
-
   return (
     <>
       <DropdownLabel htmlFor={id}>{label}</DropdownLabel>
-      <Dropdown 
+      <DropdownInput 
         inputId={id}
         name={name}
         value={value}
