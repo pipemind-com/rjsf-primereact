@@ -1,10 +1,12 @@
 import React from "react"
+import { USE_LOGS } from "./util"
 
-function Header ({ 
-  uiSchema, 
-  title, 
-  description, 
-  idSchema, 
+
+function Header ({
+  uiSchema,
+  title,
+  description,
+  idSchema,
   required,
   TitleField,
   DescriptionField
@@ -40,7 +42,6 @@ function ObjectFieldTemplate(props) {
     idSchema,
   } = props
 
-  
   const fieldLayout = uiSchema["ui:layout"] || layout
 
   if (!fieldLayout) {
@@ -51,9 +52,10 @@ function ObjectFieldTemplate(props) {
       </>
     )
   }
-console.log('properties', properties, fieldLayout)
 
-  
+  if (USE_LOGS) {
+      console.log('properties', properties, fieldLayout)
+  }
 
   return (
     <>
@@ -65,7 +67,7 @@ console.log('properties', properties, fieldLayout)
               {properties.find(p => p.name === name)?.content}
             </div>
           ))}
-        </div>  
+        </div>
       ))}
     </>
   )

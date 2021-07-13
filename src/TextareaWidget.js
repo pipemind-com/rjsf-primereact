@@ -1,8 +1,9 @@
 import React from "react"
 import styled from 'styled-components'
 import { InputTextarea } from 'primereact/inputtextarea'
-
 import { FloatWrapper } from './util'
+import { USE_LOGS } from "./util"
+
 
 const StyledTextarea = styled(InputTextarea)`
   width: 100%;
@@ -25,7 +26,10 @@ function TextareaWidget({
   options,
   formContext,
 }) {
-  console.log('options', options)
+  if (USE_LOGS) {
+    console.log('options', options)
+  }
+
   // eslint-disable-next-line no-shadow
   const _onChange = ({ target: { value } }) => {
     return onChange(value === "" ? options.emptyValue : value)
@@ -35,10 +39,10 @@ function TextareaWidget({
   const inputType = schema.type === 'string' ?  'text' : `${schema.type}`
 
   return (
-    <FloatWrapper 
+    <FloatWrapper
       key={id}
-      required={required} 
-      id={id} 
+      required={required}
+      id={id}
       label={label}
     >
       <StyledTextarea

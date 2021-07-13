@@ -2,6 +2,8 @@ import React from "react"
 import styled from 'styled-components'
 import { Dropdown } from 'primereact/dropdown'
 import { FloatWrapper } from './util'
+import { USE_LOGS } from "./util"
+
 
 const DropdownLabel = styled.label`
   display: block;
@@ -18,18 +20,20 @@ function SelectWidget(props) {
     label,
     onChange
   } = props
-
-  console.log('dropdown props', props)
+  if (USE_LOGS) {
+    console.log('dropdown props', props)
+  }
 
   function processValue (event) {
-
-    console.log(event)
+    if (USE_LOGS) {
+      console.log(event)    
+    }
   }
 
   return (
     <>
       <DropdownLabel htmlFor={id}>{label}</DropdownLabel>
-      <Dropdown 
+      <Dropdown
         inputId={id}
         name={name}
         value={value}
