@@ -22,37 +22,41 @@ const { fields, widgets } = getDefaultRegistry()
 
 const handleChange = ({ onChange, options }) => ({ target }) => onChange(target.value === '' ? options.emptyValue : target.value)
 
-const Theme = {
-  children: (<Button type="submit" label="submit"/>),
-  fields: {
-    ...fields, 
-    TitleField
-  },
-  widgets: {
-    ...widgets, 
-    FileWidget: FileTemplate,
-    TextWidget: TextWidget,
-    CheckboxWidget,
-    TextareaWidget,
-    ColorWidget,
-    SelectWidget,
-    PasswordWidget: props => {
-      const { id, required, label, onChange, value } = props
-      return (
-        <InputText
-          id={id}
-          type="password"
-          name={label}
-          required={required}
-          onChange={handleChange(props)}
-          value={value || ''}
-        />
-      )
+const Theme = (fgNoButton) => {
+    return {
+        children: fgNoButton
+            ? (<></>)
+            : (<Button type="submit" label="submit"/>),
+        fields: {
+            ...fields,
+            TitleField
+        },
+        widgets: {
+            ...widgets,
+            FileWidget: FileTemplate,
+            TextWidget: TextWidget,
+            CheckboxWidget,
+            TextareaWidget,
+            ColorWidget,
+            SelectWidget,
+            PasswordWidget: props => {
+                const { id, required, label, onChange, value } = props
+                return (
+                    <InputText
+                        id={id}
+                        type="password"
+                        name={label}
+                        required={required}
+                        onChange={handleChange(props)}
+                        value={value || ''}
+                    />
+                )
+            }
+        },
+        FieldTemplate,
+        ObjectFieldTemplate,
+        ArrayFieldTemplate
     }
-  },
-  FieldTemplate,
-  ObjectFieldTemplate,
-  ArrayFieldTemplate
 }
 
 export default Theme
