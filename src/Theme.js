@@ -33,7 +33,16 @@ const Theme = (fgNoButton) => {
         },
         widgets: {
             ...widgets,
-            FileWidget: FileTemplate,
+            FileWidget: props => {
+                const { id, label, uploadHandler } = props
+                return (
+                    <FileTemplate
+                        id={id}
+                        label={label}
+                        uploadHandler={uploadHandler}
+                     />
+                )
+            },
             TextWidget: TextWidget,
             CheckboxWidget,
             TextareaWidget,

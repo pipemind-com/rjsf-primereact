@@ -3,15 +3,19 @@ import { FileUpload } from 'primereact/fileupload'
 import { USE_LOGS } from "./util"
 
 export default function FileTemplate (props) {
-  if (USE_LOGS) {
+//  if (USE_LOGS) {
+    console.log("FILE TEMPLATE PROPS...")
     console.log({ props })
-  }
-  const { id, label } = props
+//  }
+  const { id, label, uploadHandler } = props
 
-  function myUploader (event) {
-    if (USE_LOGS) {
-      console.log({ event })
-    }
+  const myUploader = (uploadHandler)
+  ? uploadHandler
+  : (event) => {
+//    if (USE_LOGS) {
+    console.log('FileTemplate -- No specific file handling for this event')
+    console.log({ event })
+//    }
   }
 
   return (
