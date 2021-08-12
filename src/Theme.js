@@ -23,7 +23,7 @@ const { fields, widgets } = getDefaultRegistry()
 const handleChange = ({ onChange, options }) => ({ target }) => onChange(target.value === '' ? options.emptyValue : target.value)
 
 const Theme = {
-  children: (<Button type="submit" label="submit"/>),
+  children: (<></>), //(<Button type="submit" label="submit"/>),
   fields: {
     ...fields, 
     TitleField
