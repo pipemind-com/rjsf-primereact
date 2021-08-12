@@ -35,8 +35,8 @@ function TextareaWidget({
   const _onFocus = () => onFocus && onFocus(id, value)
   const inputType = schema.type === 'string' ?  'text' : `${schema.type}`
 
-  console.log('uiSchema["ui:textProcessing"]', uiSchema["ui:textProcessing"])
-
+  //console.log('uiSchema["ui:textProcessing"]', uiSchema["ui:textProcessing"])
+  //console.log('uiSchema bgColor', uiSchema?.bgColor)
   return (
     <FloatWrapper 
       float={!!options.float}
@@ -60,6 +60,7 @@ function TextareaWidget({
         onChange={_onChange}
         onBlur={_onBlur}
         onFocus={_onFocus}
+        style={{backgroundColor: (uiSchema?.bgColor ? uiSchema.bgColor : 'white')}}
       />
     </FloatWrapper>
   )
