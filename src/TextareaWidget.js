@@ -60,7 +60,7 @@ function TextareaWidget({
         onChange={_onChange}
         onBlur={_onBlur}
         onFocus={_onFocus}
-        style={{backgroundColor: (uiSchema?.bgColor ? uiSchema.bgColor : 'white')}}
+        style={{backgroundColor: (options?.bgColor ? options.bgColor : 'white')}}
       />
     </FloatWrapper>
   )
