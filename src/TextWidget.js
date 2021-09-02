@@ -39,6 +39,7 @@ function TextWidget({
       required={required} 
       id={id} 
       label={label}
+      labelColor={options?.labelColor}
     >
       <StyledText
         id={id}

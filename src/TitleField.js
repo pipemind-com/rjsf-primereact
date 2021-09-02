@@ -9,7 +9,13 @@ const Title = styled.div`
 `
 
 function TitleField ({ title, options }) {
-  return title && (<Title>{title}</Title>)
+  return title && (
+    <Title
+      style={{ color: (options?.titleColor ? options.titleColor : undefined) }}
+    >
+      {title}
+    </Title>
+  )
 }
 
 export default TitleField

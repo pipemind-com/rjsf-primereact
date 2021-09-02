@@ -13,11 +13,12 @@ const NormalLabel = styled.label`
   top: -0.75rem;
   margin-top: -.5rem;
   font-size: 12px;
-  left: 0.5rem;
   color: #6c757d;
 `
+//  left: 0.5rem;
 
-export function FloatWrapper ({ required, label, id, float, children }) {
+
+export function FloatWrapper ({ required, label, labelColor, id, float, children }) {
   if (!label) {
     return children
   }
@@ -25,7 +26,10 @@ export function FloatWrapper ({ required, label, id, float, children }) {
   const Label = float ? FloatLabel : NormalLabel
 
   const array = [
-    (<Label key={1} htmlFor={id}>
+    (<Label key={1}
+      htmlFor={id}
+      style={{ color: labelColor ? labelColor : undefined }}
+    >
       {label} {required ? <span title="Required">*</span> : undefined}
     </Label>),
     children

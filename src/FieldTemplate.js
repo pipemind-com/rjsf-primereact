@@ -24,7 +24,7 @@ function FieldTemplate({
   return (
     <Wrapper>
       {children}
-      {displayLabel && rawDescription && rawDescription && (
+      {displayLabel && rawDescription && (
         <div>
           <DescriptionField description={rawDescription} />
         </div>

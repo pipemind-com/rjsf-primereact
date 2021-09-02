@@ -37,7 +37,12 @@ function CheckboxWidget(props) {
         onFocus={_onFocus}
         required={required}
       />
-      <CheckboxLabel htmlFor={id}>{label}</CheckboxLabel>
+      <CheckboxLabel 
+        htmlFor={id}
+        style={{ color: options?.labelColor ? options.labelColor : undefined }}
+      >
+        {label}
+      </CheckboxLabel>
     </div>
   )
 }

@@ -18,7 +18,6 @@ const MaybeWrap = styled.div`
 
 const RowActions = styled.div`
   background-color: #e9ecef;
-
 `
 
 const Row = styled.div`
@@ -151,7 +150,6 @@ function DefaultNormalArrayFieldTemplate({
 
 function ArrayFieldTemplate(props) {
   const { schema } = props;
-
   return <DefaultNormalArrayFieldTemplate {...props}  />;
 }
 

@@ -3,6 +3,7 @@ import { withTheme } from '@rjsf/core'
 
 import Theme from "./Theme"
 
-const Form = withTheme(Theme)
+export const FormMaker = (themeOpts) => withTheme(Theme(themeOpts))
+const Form = FormMaker({})
 
 export default Form

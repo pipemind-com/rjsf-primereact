@@ -1,11 +1,12 @@
 import React from "react"
 import styled from 'styled-components'
 import { Dropdown } from 'primereact/dropdown'
-import { FloatWrapper } from './util'
 
 const DropdownLabel = styled.label`
   display: block;
   padding: 6px 0;
+  font-size: 12px;
+  color: #6c757d;
 `
 
 const DropdownInput = styled(Dropdown)`
@@ -25,7 +26,12 @@ function SelectWidget(props) {
 
   return (
     <>
-      <DropdownLabel htmlFor={id}>{label}</DropdownLabel>
+      <DropdownLabel
+        htmlFor={id}
+        style={{ color: options?.labelColor ? options.labelColor : undefined }}
+      >
+        {label}
+      </DropdownLabel>
       <DropdownInput 
         inputId={id}
         name={name}

@@ -2,7 +2,7 @@ import React from "react"
 import { FileUpload } from 'primereact/fileupload'
 
 export default function FileTemplate (props) {
-  const { id, label } = props
+  const { id, label, options } = props
   
   function myUploader (event) {
     // console.log({ event })
@@ -10,7 +10,12 @@ export default function FileTemplate (props) {
 
   return (
     <>
-      <label htmlFor={id}>{label}</label>
+      <label
+        htmlFor={id} 
+        style={{ color: options?.labelColor ? options.labelColor : undefined }}
+      >
+        {label}
+      </label>
       <FileUpload id={id} name={label} mode="basic" customUpload uploadHandler={myUploader} />
     </>
   )

@@ -21,7 +21,12 @@ function ColorWidget ({
 }) {
   return (
     <>
-      <ColorLabel htmlFor={id}>{label}</ColorLabel>
+      <ColorLabel 
+        htmlFor={id}
+        style={{ color: options?.labelColor ? options.labelColor : undefined }}
+      >
+        {label}
+      </ColorLabel>
       <ColorPicker
         inputId={id}
         value={value}

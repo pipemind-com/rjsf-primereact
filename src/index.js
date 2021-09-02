@@ -1,3 +1,5 @@
 import React from "react"
-import Form from './Form'
+import Form, { FormMaker as FMk } from './Form'
+
+export const FormMaker = FMk
 export default Form

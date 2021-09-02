@@ -36,7 +36,7 @@ function TextareaWidget({
   const inputType = schema.type === 'string' ?  'text' : `${schema.type}`
 
   //console.log('uiSchema["ui:textProcessing"]', uiSchema["ui:textProcessing"])
-  //console.log('uiSchema bgColor', uiSchema?.bgColor)
+  
   return (
     <FloatWrapper 
       float={!!options.float}
@@ -44,6 +44,7 @@ function TextareaWidget({
       required={required} 
       id={id} 
       label={label}
+      labelColor={options?.labelColor}
     >
       <StyledTextarea
         id={id}
