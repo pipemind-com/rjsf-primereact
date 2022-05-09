@@ -20,15 +20,15 @@
     "primeflex": ">=2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.14",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.10.3",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@babel/preset-react": "^7.16.7",
     "cross-env": "^2.0.1"
   },
   "dependencies": {
     "@rjsf/core": "^2.5.1",
-    "styled-components": "^5.2.1",
-    "react-transition-group": "^4.4.1"
+    "react-transition-group": "^4.4.2",
+    "styled-components": "^5.3.5"
   }
 }
