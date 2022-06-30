@@ -1,12 +1,12 @@
+import { ColorPicker } from 'primereact/colorpicker'
 import React from "react"
 import styled from 'styled-components'
-import { ColorPicker } from 'primereact/colorpicker'
 
 const ColorLabel = styled.label`
   padding-right:10px;
 `
-
-function ColorWidget ({
+// test de push
+function ColorWidget({
   id,
   schema,
   options,
@@ -21,7 +21,7 @@ function ColorWidget ({
 }) {
   return (
     <>
-      <ColorLabel 
+      <ColorLabel
         htmlFor={id}
         style={{ color: options?.labelColor ? options.labelColor : undefined }}
       >
