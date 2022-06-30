@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const ColorLabel = styled.label`
   padding-right:10px;
 `
-// test de push
+
 function ColorWidget({
   id,
   schema,
