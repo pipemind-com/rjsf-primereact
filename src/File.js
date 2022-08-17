@@ -1,22 +1,24 @@
-import React from "react"
 import { FileUpload } from 'primereact/fileupload'
+import { FloatWrapper } from './util'
+import React from "react"
 
-export default function FileTemplate (props) {
-  const { id, label, options } = props
-  
-  function myUploader (event) {
-    // console.log({ event })
+export default function FileTemplate(props) {
+  const { id, label, options, required, onChange } = props
+
+  async function myUploader(event) {
+    props.onChange(event.files[0])
   }
 
   return (
-    <>
-      <label
-        htmlFor={id} 
-        style={{ color: options?.labelColor ? options.labelColor : undefined }}
-      >
-        {label}
-      </label>
-      <FileUpload id={id} name={label} mode="basic" customUpload uploadHandler={myUploader} />
-    </>
+    <FloatWrapper
+      float={!!options.float}
+      key={id}
+      required={required}
+      id={id}
+      label={label}
+      labelColor={options?.labelColor}
+    >
+      <FileUpload id={id} name={label} auto customUpload onSelect={myUploader} />
+    </FloatWrapper>
   )
 }
