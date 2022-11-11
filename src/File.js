@@ -6,7 +6,7 @@ export default function FileTemplate(props) {
   const { id, label, options, required, onChange } = props
 
   async function myUploader(event) {
-    props.onChange(event.files[0])
+    onChange(event.files[0])
   }
 
   return (

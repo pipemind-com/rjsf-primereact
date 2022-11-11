@@ -40,9 +40,8 @@ function ObjectFieldTemplate(props) {
     idSchema,
   } = props
 
-  
   const fieldLayout = uiSchema["ui:layout"] || layout
-
+  
   if (!fieldLayout) {
     return (
       <>
@@ -56,9 +55,9 @@ function ObjectFieldTemplate(props) {
     <>
       <Header {...props} />
       {fieldLayout.md.map((line, lineIndex) => (
-        <div key={lineIndex} className="p-grid">
+        <div key={lineIndex} className="grid">
           {Object.entries(line).map(([name, col], colIndex) => (
-            <div key={colIndex} className={`p-col-${col}`}>
+            <div key={colIndex} className={`col-${col}`}>
               {properties.find(p => p.name === name)?.content}
             </div>
           ))}

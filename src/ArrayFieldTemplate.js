@@ -52,12 +52,12 @@ function isInitialArrayItem(props) {
 // Used in the two templates
 function DefaultArrayItem(props) {
   return (
-    <Row className="p-grid p-shadow-2" key={props.key}>
-      <div className="p-col">
+    <Row className="grid p-shadow-2" key={props.key}>
+      <div className="col">
         {props.children}
       </div>
       {props.hasToolbar && (props.hasMoveUp || props.hasMoveDown || props.hasRemove) && (
-        <RowActions className="p-col-fixed p-d-flex p-flex-column-reverse p-jc-between">
+        <RowActions className="col-fixed flex flex-column-reverse justify-content-between">
           {props.hasRemove && (
             <Button
               icon="pi pi-trash"

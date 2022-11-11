@@ -17,7 +17,7 @@
     "react": ">=17",
     "primeicons": ">=4",
     "primereact": ">=6",
-    "primeflex": ">=2"
+    "primeflex": ">=3"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
